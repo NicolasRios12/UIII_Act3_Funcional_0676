@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'inicio_Restaurante' %}">
+            <i class="fas fa-utensils"></i> Sistema de Administración Restaurante
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'inicio_Restaurante' %}">
+                        <i class="fas fa-home"></i> Inicio
+                    </a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-book"></i> Menu
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'agregar_Menu' %}">Agregar Menu</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_Menu' %}">Ver Menu</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_Menu' %}">Actualizar Menu</a></li>
+                        <li><a class="dropdown-item" href="{% url 'ver_Menu' %}">Borrar Menu</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pedidosDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-shopping-cart"></i> Pedidos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Agregar Pedidos</a></li>
+                        <li><a class="dropdown-item" href="#">Ver Pedidos</a></li>
+                        <li><a class="dropdown-item" href="#">Actualizar Pedidos</a></li>
+                        <li><a class="dropdown-item" href="#">Borrar Pedidos</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="reservacionesDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-calendar-alt"></i> Reservaciones
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Agregar Reservaciones</a></li>
+                        <li><a class="dropdown-item" href="#">Ver Reservaciones</a></li>
+                        <li><a class="dropdown-item" href="#">Actualizar Reservaciones</a></li>
+                        <li><a class="dropdown-item" href="#">Borrar Reservaciones</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

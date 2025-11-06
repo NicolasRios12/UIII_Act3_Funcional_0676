@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h4 class="card-title mb-0">
+            <i class="fas fa-list"></i> Lista de Menús
+        </h4>
+        <a href="{% url 'agregar_Menu' %}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Agregar Menú
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Imagen</th>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Fecha de Creación</th>
+                        <th>Disponible</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for menu in menus %}
+                    <tr>
+                        <td>
+                            {% if menu.imagen %}
+                                <img src="{{ menu.imagen.url }}" alt="{{ menu.nombre }}" 
+                                     class="img-thumbnail" style="width: 60px; height: 60px; object-fit: cover;">
+                            {% else %}
+                                <span class="text-muted">Sin imagen</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ menu.id }}</td>
+                        <td>{{ menu.nombre }}</td>
+                        <td>${{ menu.precio }}</td>
+                        <td>{{ menu.categoria }}</td>
+                        <td>{{menu.fecha_creacion|date:"d/m/Y H:i"}}</td>
+                        <td>
+                            {% if menu.disponible %}
+                                <span class="badge bg-success">Sí</span>
+                            {% else %}
+                                <span class="badge bg-danger">No</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{% url 'actualizar_Menu' menu.id %}" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <a href="{% url 'borrar_Menu' menu.id %}" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i> Borrar
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7" class="text-center">No hay menús registrados</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto text-center">
+        <h1 class="mb-4">Bienvenido al Sistema de Restaurante</h1>
+        <p class="lead">Sistema de administración para gestionar menús, pedidos y reservaciones.</p>
+        
+        <div class="card mt-4">
+            <div class="card-body">
+                <img src="https://via.placeholder.com/800x400/4e73df/ffffff?text=Cinepolis+Restaurant" 
+                     class="img-fluid rounded" alt="Cinepolis Restaurant">
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                        <h5>Gestión de Menús</h5>
+                        <p>Administra el menú del restaurante</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="fas fa-shopping-cart fa-3x text-success mb-3"></i>
+                        <h5>Control de Pedidos</h5>
+                        <p>Gestiona pedidos de clientes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="fas fa-calendar-alt fa-3x text-warning mb-3"></i>
+                        <h5>Reservaciones</h5>
+                        <p>Administra reservas de mesas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
