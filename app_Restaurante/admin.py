@@ -9,10 +9,12 @@ class MenuAdmin(admin.ModelAdmin):
 
 @admin.register(Pedido)
 class PedidoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'nombre_cliente', 'menu', 'cantidad', 'total', 'entregado']
+    list_display = ['id', 'nombre_cliente', 'menu', 'cantidad', 'total', 'entregado', 'fecha_pedido']
     list_filter = ['entregado', 'metodo_pago', 'fecha_pedido']
+    search_fields = ['nombre_cliente', 'menu__nombre']
 
 @admin.register(Reservacion)
 class ReservacionAdmin(admin.ModelAdmin):
     list_display = ['nombre_cliente', 'correo', 'fecha_reservacion', 'hora', 'numero_personas']
-    list_filter = ['fecha_reservacion'] 
+    list_filter = ['fecha_reservacion']
+    search_fields = ['nombre_cliente', 'correo']
